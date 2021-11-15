@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-// import { useParams } from 'react-router-dom';
-
 import s from './TestDetails.scss';
 import { object } from 'prop-types';
 
