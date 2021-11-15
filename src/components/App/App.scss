@@ -1,18 +1,12 @@
 @use '~styles/variables' as *;
 
 body {
-  background-color: $color-dark-gray;
+  background-color: $color-primary-gray;
   font-family: 'Helvetica-Light', Helvetica, Arial, sans-serif;
 }
 
 .app {
   color: $color-white;
-
-  hr {
-    margin-bottom: 0;
-    margin-top: 0;
-    opacity: 0.15;
-  }
 }
 
 .header {

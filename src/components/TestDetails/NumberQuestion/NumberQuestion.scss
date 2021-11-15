@@ -1,0 +1,11 @@
+@use '~styles/variables' as *;
+
+.root {
+  position: relative;
+}
+
+.input {
+  width: 50px;
+  padding: 10px 5px;
+  border: 1px solid gray;
+}

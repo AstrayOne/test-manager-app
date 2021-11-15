@@ -1,0 +1,32 @@
+@use '~styles/variables' as *;
+
+.root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 40px;
+
+  .circle {
+    width: 50px;
+    height: 50px;
+    transform: rotate(0deg);
+    border-left: 2px grey solid;
+    border-right: 2px grey solid;
+    border-bottom: 2px grey solid;
+    border-top: 2px grey solid;
+    border-radius: 50%;
+    animation: rotate-right 0.8s linear infinite;
+  }
+
+  &.isNormal {
+    height: auto;
+  }
+}
+
+@keyframes rotate-right {
+  100% {
+    transform: rotate(360deg);
+  }
+}

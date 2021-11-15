@@ -24,11 +24,11 @@ const App = ({ routes }) => {
       <div className={styles.app}>
         {/* Use Helmet only in SPA mode. Render app head on server side  */}
         {/* <Helmet {...config.app} /> */}
-        <div className={styles.header}>
+        {/* <div className={styles.header}>
           <img src={logo} alt="logo" role="presentation" />
           <h1>{config.app.title}</h1>
         </div>
-        <hr />
+        <hr /> */}
         <AppRouter routes={routes} />
       </div>
     </>

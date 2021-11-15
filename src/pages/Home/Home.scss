@@ -1,0 +1,13 @@
+@use '~styles/variables' as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 200px 400px;
+}
+
+.button {
+  color: black;
+}

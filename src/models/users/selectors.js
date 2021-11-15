@@ -12,17 +12,17 @@ export const isFetchingSelector = createSelector(
   ({ fetching }) => fetching
 );
 
-export const isCollectionFetchedSelector = createSelector(
+export const currentUserSelector = createSelector(
   usersSelector,
-  ({ collectionFetched }) => collectionFetched
+  ({ currentUser }) => currentUser
 );
 
-export const collectionSelector = createSelector(usersSelector, users =>
-  denormalize(users.collection)
+export const testListSelector = createSelector(
+  usersSelector,
+  ({ testList }) => testList
 );
 
-export const itemSelector = createSelector(
+export const isFetchingTestListSelector = createSelector(
   usersSelector,
-  (_, id) => id,
-  ({ collection }, id) => collection[id] || { fetched: false }
+  ({ fetchingTestList }) => fetchingTestList
 );

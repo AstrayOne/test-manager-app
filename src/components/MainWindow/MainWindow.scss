@@ -1,0 +1,24 @@
+@use '~styles/variables' as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: black;
+  background-color: $color-white;
+}
+
+.testList {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.logout {
+  cursor: pointer;
+}

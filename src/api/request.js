@@ -1,13 +1,22 @@
 import axios from 'axios';
 import config from 'config';
 
-const BASE_URL = '/api';
+axios.defaults.withCredentials = true;
+
+const BASE_URL = config.api_url;
+const SCOPE_KEY = config.scope_key;
 const STUB_DELAY = 1000;
 const METHODS = ['GET', 'DELETE', 'HEAD', 'POST', 'PUT', 'PATCH'];
 
 const sidedRequest = opts => {
   if (RUNTIME_ENV === 'client') {
-    return axios({ baseURL: BASE_URL, ...opts });
+    return axios({
+      baseURL: BASE_URL,
+      headers: {
+        'scope-key': SCOPE_KEY,
+      },
+      ...opts,
+    });
   }
 
   return axios({ baseURL: config.remoteApiUrl, ...opts });

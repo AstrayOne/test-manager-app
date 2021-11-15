@@ -1,31 +1,28 @@
 import Req from './request';
 
-import users from 'stubs/users';
-
-export const fetchUsers = () =>
+export const fetchCurrentUser = () =>
   Req.GET({
-    url: '/users',
-    stubData: users,
+    url: `users/current`,
   });
 
-export const fetchUser = id => {
-  const userItem = users.find(user => user.id === Number(id));
-
-  if (userItem) {
-    return Req.GET({
-      url: `/users/${id}`,
-      stubData: userItem,
-    });
-  }
-
-  return Promise.reject(new Error('Not found'));
-};
-
-export const fetchUsersIds = () => {
-  const usersIds = users.map(user => user.id);
-
-  return Req.GET({
-    url: `/users_ids`,
-    stubData: usersIds,
+export const signIn = data =>
+  Req.POST({
+    url: `signin`,
+    params: data,
   });
-};
+
+export const signUp = data =>
+  Req.POST({
+    url: `signup`,
+    params: data,
+  });
+
+export const fetchTestList = () =>
+  Req.GET({
+    url: `tests`,
+  });
+
+export const logout = () =>
+  Req.DELETE({
+    url: `logout`,
+  });

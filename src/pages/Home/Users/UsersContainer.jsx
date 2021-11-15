@@ -6,26 +6,34 @@ import useSelector from 'hooks/useSelector';
 import useComponentDidMount from 'hooks/useComponentDidMount';
 
 import {
-  collectionSelector,
-  isFetchingSelector,
-  isCollectionFetchedSelector,
+  // collectionSelector,
+  // isFetchingSelector,
+  // isCollectionFetchedSelector,
+  currentUserSelector,
 } from 'models/users/selectors';
 
-import Users from './Users';
+// import Users from './Users';
 
 const UsersContainer = () => {
-  const onFetchUsers = useAction(actions.fetchUsers);
-  const users = useSelector(collectionSelector);
-  const fetching = useSelector(isFetchingSelector);
-  const collectionFetched = useSelector(isCollectionFetchedSelector);
-
+  // const onFetchUsers = useAction(actions.fetchUsers);
+  const onFetchAuth = useAction(actions.fetchAuth);
+  const onFetchCurrentUser = useAction(actions.fetchCurrentUser);
+  // const users = useSelector(collectionSelector);
+  // const fetching = useSelector(isFetchingSelector);
+  // const collectionFetched = useSelector(isCollectionFetchedSelector);
+  const currentUser = useSelector(currentUserSelector);
+  console.log(currentUser);
   useComponentDidMount(() => {
-    if (!collectionFetched) {
-      onFetchUsers();
-    }
+    // if (!collectionFetched) {
+    //   onFetchUsers();
+    //   onFetchCurrentUser();
+    // }
+    onFetchAuth();
+    onFetchCurrentUser();
   });
 
-  return <Users list={users} fetching={fetching} />;
+  return <div>{currentUser.id}</div>;
+  // return <Users list={users} fetching={fetching} />;
 };
 
 export default UsersContainer;

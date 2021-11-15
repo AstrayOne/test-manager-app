@@ -9,7 +9,9 @@ const configs = {
 export default {
   port: process.env.PORT,
   defaultLocale: 'en',
-  remoteApiUrl: 'https://github.com/snphq/react-starter-boilerplate',
+  remoteApiUrl: 'https://snp-tests.herokuapp.com/api/v1/',
+  api_url: 'https://snp-tests.herokuapp.com/api/v1/',
+  scope_key: 'w/3pVtA*x/UgQZtC',
   htmlMinifier: {
     collapseWhitespace: true,
     removeComments: true,
@@ -26,7 +28,7 @@ export default {
   },
   app: {
     htmlAttributes: { lang: 'en' },
-    title: 'React Starter Boilerplate',
+    title: 'Test Manager App',
     link: [
       {
         rel: 'shortcut icon',

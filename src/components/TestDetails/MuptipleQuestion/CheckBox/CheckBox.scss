@@ -1,0 +1,10 @@
+@use '~styles/variables' as *;
+
+.root {
+  position: relative;
+  display: flex;
+}
+
+.text {
+  margin-left: 10px;
+}

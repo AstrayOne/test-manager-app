@@ -1,0 +1,46 @@
+@use '~styles/variables' as *;
+
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  width: 500px;
+  // height: 500px;
+  margin-top: 200px;
+  color: black;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+
+  & > *:first-child {
+    margin-bottom: 10px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 25px;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  z-index: 1;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+
+  // @include fontSet(15, 15);
+
+  // @include media-tablet {
+  //   border: none;
+  //   background-color: $color-white;
+  // }
+
+  &::placeholder {
+    color: #0b0c4c4d;
+  }
+}

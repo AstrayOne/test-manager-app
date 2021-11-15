@@ -9,25 +9,49 @@ import { normalize } from 'utils/normalizeById';
 const usersSlice = createSlice({
   name: 'users',
   initialState: {
-    collection: {},
     fetching: true,
-    collectionFetched: false,
+    currentUser: {},
+    fetchingCurrentUser: true,
+    testList: {},
+    fetchingTestList: true,
   },
   reducers: {
-    fetchUser: state => {
+    fetchCurrentUser: state => {
       state.fetching = true;
     },
-    fetchUsers: state => {
+    fetchCurrentUserSuccess(state, { payload }) {
+      state.fetching = false;
+      state.currentUser = payload;
+    },
+    fetchCurrentUserFail(state, { payload }) {
+      state.fetching = false;
+    },
+    signIn: state => {
       state.fetching = true;
     },
-    fetchUserSuccess(state, { payload }) {
+    signInSuccess(state, { payload }) {
       state.fetching = false;
-      state.collection[payload.user.id] = { ...payload.user, fetched: true };
+      state.currentUser = payload;
     },
-    fetchUsersSuccess(state, { payload }) {
+    signUp: state => {
+      state.fetching = true;
+    },
+    signUpSuccess: state => {
       state.fetching = false;
-      state.collectionFetched = true;
-      state.collection = normalize(payload.users);
+    },
+    fetchTestList: state => {
+      state.fetchingTestList = true;
+    },
+    fetchTestListSuccess(state, { payload }) {
+      state.fetchingTestList = false;
+      state.testList = payload;
+    },
+    logout: state => {
+      state.fetching = true;
+    },
+    logoutSuccess: state => {
+      state.fetching = false;
+      state.currentUser = {};
     },
   },
 });
